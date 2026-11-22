@@ -27,7 +27,6 @@ class Cart:
     def __init__(self, catalog):
         self._catalog = catalog
         self._qty = {}
-        self._prices = {}
         self._coupons = []
 
     def to_state(self):
