@@ -69,8 +69,11 @@ class Cart:
         return self._qty.get(sku, 0)
 
     def lines(self):
-        """TODO: one Line(sku, name, unit_price, qty) per sku, in insertion order, price from the catalog."""
-        raise NotImplementedError("TODO: lines")
+        """Return one line per sku in insertion order, priced from the catalog."""
+        return [
+            Line(sku, self._catalog[sku].name, self._catalog[sku].price, qty)
+            for sku, qty in self._qty.items()
+        ]
 
     # --- coupon and totals ---
     def apply_coupon(self, code):
