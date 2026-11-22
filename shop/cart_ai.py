@@ -42,15 +42,15 @@ class Cart:
         cart._coupons = list(state.get("coupons", []))
         return cart
 
-    def add(self, sku, qty=1, price=None):
+    def add(self, sku, qty=1):
         _check_qty(qty)
         product = self._catalog.get(sku)
         if product is None:
             raise UnknownProduct(f"No existe el producto {sku!r}")
-        if qty > product.stock:
-            raise OutOfStock(f"{sku}: pides {qty} y quedan {product.stock}")
-        self._qty[sku] = self._qty.get(sku, 0) + qty
-        self._prices[sku] = Decimal(str(price)) if price is not None else product.price
+        in_cart = self._qty.get(sku, 0)
+        if in_cart + qty > product.stock:
+            raise OutOfStock(f"{sku}: pides {qty}, ya hay {in_cart} y quedan {product.stock}")
+        self._qty[sku] = in_cart + qty
 
     def remove(self, sku, qty=None):
         if sku not in self._qty:
