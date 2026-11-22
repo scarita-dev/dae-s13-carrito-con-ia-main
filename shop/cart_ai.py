@@ -3,15 +3,15 @@ from decimal import Decimal
 
 from shop.domain import (
     COUPONS,
+    IGV_RATE,
     CartError,
     InvalidCoupon,
     InvalidQuantity,
     Line,
     OutOfStock,
     UnknownProduct,
+    money,
 )
-
-IGV = 0.18
 
 
 def _money(value):
@@ -101,7 +101,7 @@ class Cart:
         return _money(self._discount())
 
     def igv(self):
-        return _money((self._subtotal() - self._discount()) * IGV)
+        return _money((self._subtotal() - self._discount()) * IGV_RATE)
 
     def total(self):
         base = self._subtotal() - self._discount()
