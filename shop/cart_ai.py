@@ -81,7 +81,7 @@ class Cart:
         self._coupons.append(code)
 
     def _subtotal(self):
-        return sum(float(l.unit_price) * l.qty for l in self.lines())
+        return sum((l.unit_price * l.qty for l in self.lines()), Decimal("0"))
 
     def _discount(self):
         subtotal = self._subtotal()
