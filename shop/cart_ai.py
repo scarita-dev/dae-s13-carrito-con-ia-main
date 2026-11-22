@@ -15,7 +15,7 @@ from shop.domain import (
 
 
 def _money(value):
-    return Decimal(str(round(value, 2)))
+    return money(value)
 
 
 def _check_qty(qty):
