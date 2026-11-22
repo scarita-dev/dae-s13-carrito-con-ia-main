@@ -37,7 +37,6 @@ class Cart:
     def from_state(cls, catalog, state):
         cart = cls(catalog)
         cart._qty = {sku: int(q) for sku, q in state.get("qty", {}).items() if sku in catalog}
-        cart._prices = {k: Decimal(v) for k, v in state.get("prices", {}).items() if k in cart._qty}
         cart._coupons = list(state.get("coupons", []))
         return cart
 
