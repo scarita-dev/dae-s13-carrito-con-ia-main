@@ -1,0 +1,6 @@
+﻿
+Duelo: las mismas pruebas contra cada carrito
+team       tu carrito                 pasan   7   fallan  60
+ai         el carrito de la IA        pasan  49   fallan  18
+
+Para el detalle de uno: python manage.py duelo --modo ai

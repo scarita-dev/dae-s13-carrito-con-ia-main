@@ -1,0 +1,1675 @@
+﻿python : Creating test database for alias 'default'...
+En línea: 1 Carácter: 9
++ $out = (python manage.py test 2>&1 | Out-String); $code = $LASTEXITCO ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Creating test d...as 'default'...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+EEEEEEEEEEEEEEEEE......FF.EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+======================================================================
+ERROR: test_a_negative_price_from_the_client_changes_nothing_either 
+(shop.tests.test_api.ApiTests.test_a_negative_price_from_the_client_changes_nothing_either)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 39, in 
+test_a_negative_price_from_the_client_changes_nothing_either
+    self.post("/api/cart/items/", {"sku": "LAP-01", "price": -100})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_adding_an_item_returns_the_cart (shop.tests.test_api.ApiTests.test_adding_an_item_returns_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 19, in 
+test_adding_an_item_returns_the_cart
+    response = self.post("/api/cart/items/", {"sku": "MOU-01", "qty": 2})
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_bad_input_is_400 (shop.tests.test_api.ApiTests.test_bad_input_is_400) (body={'sku': 'MOU-01', 'qty': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 54, in test_bad_input_is_400
+    self.assertEqual(self.post("/api/cart/items/", body).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_bad_input_is_400 (shop.tests.test_api.ApiTests.test_bad_input_is_400) (body={'sku': 'MOU-01', 'qty': 
+'dos'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 54, in test_bad_input_is_400
+    self.assertEqual(self.post("/api/cart/items/", body).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_bad_input_is_400 (shop.tests.test_api.ApiTests.test_bad_input_is_400) (body={'qty': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 54, in test_bad_input_is_400
+    self.assertEqual(self.post("/api/cart/items/", body).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_bad_input_is_400 (shop.tests.test_api.ApiTests.test_bad_input_is_400) (body=[1, 2])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 54, in test_bad_input_is_400
+    self.assertEqual(self.post("/api/cart/items/", body).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_checkout_creates_the_order_and_lowers_the_stock 
+(shop.tests.test_api.ApiTests.test_checkout_creates_the_order_and_lowers_the_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 80, in 
+test_checkout_creates_the_order_and_lowers_the_stock
+    self.post("/api/cart/items/", {"sku": "PAD-01", "qty": 2})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_checkout_of_an_empty_cart_is_400 (shop.tests.test_api.ApiTests.test_checkout_of_an_empty_cart_is_400)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 88, in 
+test_checkout_of_an_empty_cart_is_400
+    self.assertEqual(self.post("/api/cart/checkout/", {}).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 101, in cart_checkout
+    order = cart.checkout()
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 90, in checkout
+    raise NotImplementedError("TODO: checkout")
+NotImplementedError: TODO: checkout
+
+======================================================================
+ERROR: test_checkout_when_the_stock_changed_is_409_and_keeps_the_cart 
+(shop.tests.test_api.ApiTests.test_checkout_when_the_stock_changed_is_409_and_keeps_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 91, in 
+test_checkout_when_the_stock_changed_is_409_and_keeps_the_cart
+    self.post("/api/cart/items/", {"sku": "PAD-01", "qty": 2})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_more_than_the_stock_is_409 (shop.tests.test_api.ApiTests.test_more_than_the_stock_is_409)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 46, in 
+test_more_than_the_stock_is_409
+    self.post("/api/cart/items/", {"sku": "PAD-01", "qty": 2})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_remove_more_than_there_is_leaves_no_negative_line 
+(shop.tests.test_api.ApiTests.test_remove_more_than_there_is_leaves_no_negative_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 59, in 
+test_remove_more_than_there_is_leaves_no_negative_line
+    self.post("/api/cart/items/", {"sku": "MOU-01", "qty": 2})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_remove_with_a_quantity_that_is_not_a_number_is_400 
+(shop.tests.test_api.ApiTests.test_remove_with_a_quantity_that_is_not_a_number_is_400)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 66, in 
+test_remove_with_a_quantity_that_is_not_a_number_is_400
+    self.post("/api/cart/items/", {"sku": "MOU-01"})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_the_cart_persists_between_requests (shop.tests.test_api.ApiTests.test_the_cart_persists_between_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 26, in 
+test_the_cart_persists_between_requests
+    self.post("/api/cart/items/", {"sku": "MOU-01"})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_the_coupon_is_applied_once_even_if_the_client_repeats_it 
+(shop.tests.test_api.ApiTests.test_the_coupon_is_applied_once_even_if_the_client_repeats_it)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 70, in 
+test_the_coupon_is_applied_once_even_if_the_client_repeats_it
+    self.post("/api/cart/items/", {"sku": "KEY-01"})
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_the_price_comes_from_the_catalog_not_from_the_client 
+(shop.tests.test_api.ApiTests.test_the_price_comes_from_the_catalog_not_from_the_client)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 32, in 
+test_the_price_comes_from_the_catalog_not_from_the_client
+    response = self.post("/api/cart/items/", {"sku": "LAP-01", "qty": 1, "price": 0.01})
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_unknown_coupon_is_400 (shop.tests.test_api.ApiTests.test_unknown_coupon_is_400)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 77, in 
+test_unknown_coupon_is_400
+    self.assertEqual(self.post("/api/cart/coupon/", {"code": "GRATIS100"}).status_code, 400)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 87, in cart_coupon
+    cart.apply_coupon(_body(request).get("code"))
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 62, in apply_coupon
+    raise NotImplementedError("TODO: apply_coupon")
+NotImplementedError: TODO: apply_coupon
+
+======================================================================
+ERROR: test_unknown_product_is_404 (shop.tests.test_api.ApiTests.test_unknown_product_is_404)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 43, in 
+test_unknown_product_is_404
+    self.assertEqual(self.post("/api/cart/items/", {"sku": "XXX-99"}).status_code, 404)
+                     ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_api.py", line 16, in post
+    return self.client.post(url, json.dumps(body), content_type="application/json")
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1156, in 
+post
+    response = super().post(
+        path,
+    ...<5 lines>...
+        **extra,
+    )
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 499, in 
+post
+    return self.generic(
+           ~~~~~~~~~~~~^
+        "POST",
+        ^^^^^^^
+    ...<6 lines>...
+        **extra,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 671, in 
+generic
+    return self.request(**r)
+           ~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 1090, in 
+request
+    self.check_exception(response)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\test\client.py", line 805, in 
+check_exception
+    raise exc_value
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\exception.py", 
+line 55, in inner
+    response = get_response(request)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\core\handlers\base.py", line 
+197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\csrf.py", line 
+65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\site-packages\django\views\decorators\http.py", line 
+64, in inner
+    return func(request, *args, **kwargs)
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\views.py", line 59, in cart_add
+    cart_module.add_from_payload(cart, _body(request))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 97, in add_from_payload
+    raise NotImplementedError("TODO: add_from_payload")
+NotImplementedError: TODO: add_from_payload
+
+======================================================================
+ERROR: test_a_second_coupon_replaces_the_first 
+(shop.tests.test_coupons.CouponTests.test_a_second_coupon_replaces_the_first)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_applying_the_same_coupon_twice_discounts_once 
+(shop.tests.test_coupons.CouponTests.test_applying_the_same_coupon_twice_discounts_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_code_is_trimmed_and_case_insensitive 
+(shop.tests.test_coupons.CouponTests.test_code_is_trimmed_and_case_insensitive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_fixed_coupon (shop.tests.test_coupons.CouponTests.test_fixed_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_fixed_coupon_never_exceeds_the_subtotal 
+(shop.tests.test_coupons.CouponTests.test_fixed_coupon_never_exceeds_the_subtotal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_no_coupon_no_discount (shop.tests.test_coupons.CouponTests.test_no_coupon_no_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_percent_coupon (shop.tests.test_coupons.CouponTests.test_percent_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_the_discount_follows_the_cart (shop.tests.test_coupons.CouponTests.test_the_discount_follows_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_unknown_coupon_is_rejected_and_changes_nothing 
+(shop.tests.test_coupons.CouponTests.test_unknown_coupon_is_rejected_and_changes_nothing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 13, in setUp
+    self.cart.add("KEY-01")  # 189.00
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_add_creates_a_line_with_the_catalog_price 
+(shop.tests.test_lines.LinesTests.test_add_creates_a_line_with_the_catalog_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 19, in 
+test_add_creates_a_line_with_the_catalog_price
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_add_defaults_to_one_unit (shop.tests.test_lines.LinesTests.test_add_defaults_to_one_unit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 26, in 
+test_add_defaults_to_one_unit
+    self.cart.add("KEY-01")
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_adding_the_same_product_accumulates 
+(shop.tests.test_lines.LinesTests.test_adding_the_same_product_accumulates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 30, in 
+test_adding_the_same_product_accumulates
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_errors_share_a_base_class (shop.tests.test_lines.LinesTests.test_errors_share_a_base_class)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 88, in 
+test_errors_share_a_base_class
+    self.cart.add("XXX-99")
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty=2.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty='2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected) 
+(qty=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 44, in 
+test_invalid_quantities_are_rejected
+    self.cart.add("MOU-01", bad)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 45, in 
+test_invalid_quantities_are_rejected
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 56, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_lines_keep_insertion_order (shop.tests.test_lines.LinesTests.test_lines_keep_insertion_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 37, in 
+test_lines_keep_insertion_order
+    self.cart.add(sku)
+    ~~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_new_cart_is_empty (shop.tests.test_lines.LinesTests.test_new_cart_is_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 15, in 
+test_new_cart_is_empty
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 56, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_remove_exactly_what_is_there_drops_the_line 
+(shop.tests.test_lines.LinesTests.test_remove_exactly_what_is_there_drops_the_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 63, in 
+test_remove_exactly_what_is_there_drops_the_line
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_remove_more_than_there_is_never_leaves_a_negative_quantity 
+(shop.tests.test_lines.LinesTests.test_remove_more_than_there_is_never_leaves_a_negative_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 68, in 
+test_remove_more_than_there_is_never_leaves_a_negative_quantity
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_remove_some_units_keeps_the_rest (shop.tests.test_lines.LinesTests.test_remove_some_units_keeps_the_rest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 58, in 
+test_remove_some_units_keeps_the_rest
+    self.cart.add("MOU-01", 5)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_remove_something_that_is_not_in_the_cart 
+(shop.tests.test_lines.LinesTests.test_remove_something_that_is_not_in_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 76, in 
+test_remove_something_that_is_not_in_the_cart
+    self.cart.remove("MOU-01")
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 49, in remove
+    raise NotImplementedError("TODO: remove")
+NotImplementedError: TODO: remove
+
+======================================================================
+ERROR: test_remove_with_an_invalid_quantity (shop.tests.test_lines.LinesTests.test_remove_with_an_invalid_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 79, in 
+test_remove_with_an_invalid_quantity
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_remove_without_quantity_drops_the_line 
+(shop.tests.test_lines.LinesTests.test_remove_without_quantity_drops_the_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 52, in 
+test_remove_without_quantity_drops_the_line
+    self.cart.add("MOU-01", 3)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_state_survives_between_requests (shop.tests.test_lines.LinesTests.test_state_survives_between_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 91, in 
+test_state_survives_between_requests
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_unknown_product_is_rejected (shop.tests.test_lines.LinesTests.test_unknown_product_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 49, in 
+test_unknown_product_is_rejected
+    self.cart.add("XXX-99")
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_checkout_checks_the_stock_again (shop.tests.test_stock.StockTests.test_checkout_checks_the_stock_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 58, in 
+test_checkout_checks_the_stock_again
+    self.cart.add("PAD-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_checkout_clears_the_coupon (shop.tests.test_stock.StockTests.test_checkout_clears_the_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 76, in 
+test_checkout_clears_the_coupon
+    self.cart.add("MOU-01")
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_checkout_lowers_the_stock_and_empties_the_cart 
+(shop.tests.test_stock.StockTests.test_checkout_lowers_the_stock_and_empties_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 43, in 
+test_checkout_lowers_the_stock_and_empties_the_cart
+    self.cart.add("PAD-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_checkout_of_an_empty_cart_is_an_error 
+(shop.tests.test_stock.StockTests.test_checkout_of_an_empty_cart_is_an_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 54, in 
+test_checkout_of_an_empty_cart_is_an_error
+    self.cart.checkout()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 90, in checkout
+    raise NotImplementedError("TODO: checkout")
+NotImplementedError: TODO: checkout
+
+======================================================================
+ERROR: test_more_than_the_stock_is_rejected_and_the_cart_is_unchanged 
+(shop.tests.test_stock.StockTests.test_more_than_the_stock_is_rejected_and_the_cart_is_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 21, in 
+test_more_than_the_stock_is_rejected_and_the_cart_is_unchanged
+    self.cart.add("PAD-01", 3)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_removing_frees_room_to_add_again (shop.tests.test_stock.StockTests.test_removing_frees_room_to_add_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 37, in 
+test_removing_frees_room_to_add_again
+    self.cart.add("PAD-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_the_stock_counts_what_is_already_in_the_cart 
+(shop.tests.test_stock.StockTests.test_the_stock_counts_what_is_already_in_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 25, in 
+test_the_stock_counts_what_is_already_in_the_cart
+    self.cart.add("PAD-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_the_stock_is_never_negative_after_any_sequence 
+(shop.tests.test_stock.StockTests.test_the_stock_is_never_negative_after_any_sequence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 68, in 
+test_the_stock_is_never_negative_after_any_sequence
+    self.cart.add("PAD-01", qty)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_two_adds_cannot_get_around_the_stock 
+(shop.tests.test_stock.StockTests.test_two_adds_cannot_get_around_the_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 31, in 
+test_two_adds_cannot_get_around_the_stock
+    self.cart.add("LAP-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_you_can_add_up_to_the_stock (shop.tests.test_stock.StockTests.test_you_can_add_up_to_the_stock)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_stock.py", line 16, in 
+test_you_can_add_up_to_the_stock
+    self.cart.add("PAD-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_a_discount_of_one_and_a_half_cents 
+(shop.tests.test_totals.TotalsTests.test_a_discount_of_one_and_a_half_cents)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 48, in 
+test_a_discount_of_one_and_a_half_cents
+    self.cart.add("STK-01", 3)  # 1.05 * 10 % = 0.105 exactly
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_igv_and_total_without_coupon (shop.tests.test_totals.TotalsTests.test_igv_and_total_without_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 19, in 
+test_igv_and_total_without_coupon
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_igv_rounds_half_up (shop.tests.test_totals.TotalsTests.test_igv_rounds_half_up)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 36, in 
+test_igv_rounds_half_up
+    self.cart.add("LAP-01")
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_money_is_decimal_not_float (shop.tests.test_totals.TotalsTests.test_money_is_decimal_not_float)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 26, in 
+test_money_is_decimal_not_float
+    self.cart.add("MOU-01")
+Found 67 test(s).
+System check identified no issues (0 silenced).
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_subtotal_is_the_sum_of_price_times_quantity 
+(shop.tests.test_totals.TotalsTests.test_subtotal_is_the_sum_of_price_times_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 14, in 
+test_subtotal_is_the_sum_of_price_times_quantity
+    self.cart.add("MOU-01", 2)  # 79.80
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_summary_has_the_shape_the_api_sends 
+(shop.tests.test_totals.TotalsTests.test_summary_has_the_shape_the_api_sends)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 59, in 
+test_summary_has_the_shape_the_api_sends
+    self.cart.add("MOU-01", 2)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_summary_of_an_empty_cart (shop.tests.test_totals.TotalsTests.test_summary_of_an_empty_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 72, in 
+test_summary_of_an_empty_cart
+    self.assertEqual(self.cart.summary(), {
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 84, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_ten_small_items_add_up_exactly (shop.tests.test_totals.TotalsTests.test_ten_small_items_add_up_exactly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 31, in 
+test_ten_small_items_add_up_exactly
+    self.cart.add("STK-01", 3)  # 3 * 0.35: the classic 0.1 + 0.2 problem
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_the_discount_rounds_half_up (shop.tests.test_totals.TotalsTests.test_the_discount_rounds_half_up)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 42, in 
+test_the_discount_rounds_half_up
+    self.cart.add("PAD-01")  # 8.45 * 10 % = 0.845 exactly
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+ERROR: test_total_is_the_sum_of_its_rounded_parts 
+(shop.tests.test_totals.TotalsTests.test_total_is_the_sum_of_its_rounded_parts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 53, in 
+test_total_is_the_sum_of_its_rounded_parts
+    self.cart.add("HUB-01")  # 67.45
+    ~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 44, in add
+    raise NotImplementedError("TODO: add")
+NotImplementedError: TODO: add
+
+======================================================================
+FAIL: test_replay_of_a_consistent_cart_matches_your_cart 
+(shop.tests.test_audit.AuditTests.test_replay_of_a_consistent_cart_matches_your_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_audit.py", line 47, in 
+test_replay_of_a_consistent_cart_matches_your_cart
+    self.assertEqual(self.codes("01-correcto.json", replay=True), [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['REPLAY_UNAVAILABLE'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'REPLAY_UNAVAILABLE'
+
+- ['REPLAY_UNAVAILABLE']
++ []
+
+======================================================================
+FAIL: test_replay_of_the_rounding_cart_matches_your_cart 
+(shop.tests.test_audit.AuditTests.test_replay_of_the_rounding_cart_matches_your_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_audit.py", line 51, in 
+test_replay_of_the_rounding_cart_matches_your_cart
+    self.assertEqual([c for c in self.codes("06-redondeo.json", replay=True) if c.startswith("REPLAY")], [])
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: ['REPLAY_UNAVAILABLE'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'REPLAY_UNAVAILABLE'
+
+- ['REPLAY_UNAVAILABLE']
++ []
+
+----------------------------------------------------------------------
+Ran 67 tests in 0.464s
+
+FAILED (failures=2, errors=67)
+Destroying test database for alias 'default'...
+

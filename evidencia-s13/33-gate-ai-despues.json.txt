@@ -1,0 +1,43 @@
+﻿{
+  "mode": "ai",
+  "tests": {
+    "total": 67,
+    "passed": 67,
+    "failed": 0,
+    "failing": []
+  },
+  "carts": [
+    {
+      "file": "01-correcto.json",
+      "expected": "totales",
+      "result": "ok"
+    },
+    {
+      "file": "02-precio-del-cliente.json",
+      "expected": "totales",
+      "result": "ok"
+    },
+    {
+      "file": "03-stock.json",
+      "expected": "rechazar",
+      "result": "ok"
+    },
+    {
+      "file": "04-cantidad-negativa.json",
+      "expected": "rechazar",
+      "result": "ok"
+    },
+    {
+      "file": "05-cupon-doble.json",
+      "expected": "totales",
+      "result": "ok"
+    },
+    {
+      "file": "06-redondeo.json",
+      "expected": "totales",
+      "result": "ok"
+    }
+  ],
+  "verdict": "aceptar",
+  "exit_code": 0
+}

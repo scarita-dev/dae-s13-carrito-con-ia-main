@@ -1,0 +1,104 @@
+﻿{
+  "mode": "team",
+  "tests": {
+    "total": 67,
+    "passed": 7,
+    "failed": 60,
+    "failing": [
+      "shop.tests.test_api.ApiTests.test_a_negative_price_from_the_client_changes_nothing_either",
+      "shop.tests.test_api.ApiTests.test_adding_an_item_returns_the_cart",
+      "shop.tests.test_api.ApiTests.test_bad_input_is_400",
+      "shop.tests.test_api.ApiTests.test_checkout_creates_the_order_and_lowers_the_stock",
+      "shop.tests.test_api.ApiTests.test_checkout_of_an_empty_cart_is_400",
+      "shop.tests.test_api.ApiTests.test_checkout_when_the_stock_changed_is_409_and_keeps_the_cart",
+      "shop.tests.test_api.ApiTests.test_more_than_the_stock_is_409",
+      "shop.tests.test_api.ApiTests.test_remove_more_than_there_is_leaves_no_negative_line",
+      "shop.tests.test_api.ApiTests.test_remove_with_a_quantity_that_is_not_a_number_is_400",
+      "shop.tests.test_api.ApiTests.test_the_cart_persists_between_requests",
+      "shop.tests.test_api.ApiTests.test_the_coupon_is_applied_once_even_if_the_client_repeats_it",
+      "shop.tests.test_api.ApiTests.test_the_price_comes_from_the_catalog_not_from_the_client",
+      "shop.tests.test_api.ApiTests.test_unknown_coupon_is_400",
+      "shop.tests.test_api.ApiTests.test_unknown_product_is_404",
+      "shop.tests.test_audit.AuditTests.test_replay_of_a_consistent_cart_matches_your_cart",
+      "shop.tests.test_audit.AuditTests.test_replay_of_the_rounding_cart_matches_your_cart",
+      "shop.tests.test_coupons.CouponTests.test_a_second_coupon_replaces_the_first",
+      "shop.tests.test_coupons.CouponTests.test_applying_the_same_coupon_twice_discounts_once",
+      "shop.tests.test_coupons.CouponTests.test_code_is_trimmed_and_case_insensitive",
+      "shop.tests.test_coupons.CouponTests.test_fixed_coupon",
+      "shop.tests.test_coupons.CouponTests.test_fixed_coupon_never_exceeds_the_subtotal",
+      "shop.tests.test_coupons.CouponTests.test_no_coupon_no_discount",
+      "shop.tests.test_coupons.CouponTests.test_percent_coupon",
+      "shop.tests.test_coupons.CouponTests.test_the_discount_follows_the_cart",
+      "shop.tests.test_coupons.CouponTests.test_unknown_coupon_is_rejected_and_changes_nothing",
+      "shop.tests.test_lines.LinesTests.test_add_creates_a_line_with_the_catalog_price",
+      "shop.tests.test_lines.LinesTests.test_add_defaults_to_one_unit",
+      "shop.tests.test_lines.LinesTests.test_adding_the_same_product_accumulates",
+      "shop.tests.test_lines.LinesTests.test_errors_share_a_base_class",
+      "shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected",
+      "shop.tests.test_lines.LinesTests.test_lines_keep_insertion_order",
+      "shop.tests.test_lines.LinesTests.test_new_cart_is_empty",
+      "shop.tests.test_lines.LinesTests.test_remove_exactly_what_is_there_drops_the_line",
+      "shop.tests.test_lines.LinesTests.test_remove_more_than_there_is_never_leaves_a_negative_quantity",
+      "shop.tests.test_lines.LinesTests.test_remove_some_units_keeps_the_rest",
+      "shop.tests.test_lines.LinesTests.test_remove_something_that_is_not_in_the_cart",
+      "shop.tests.test_lines.LinesTests.test_remove_with_an_invalid_quantity",
+      "shop.tests.test_lines.LinesTests.test_remove_without_quantity_drops_the_line",
+      "shop.tests.test_lines.LinesTests.test_state_survives_between_requests",
+      "shop.tests.test_lines.LinesTests.test_unknown_product_is_rejected",
+      "shop.tests.test_stock.StockTests.test_checkout_checks_the_stock_again",
+      "shop.tests.test_stock.StockTests.test_checkout_clears_the_coupon",
+      "shop.tests.test_stock.StockTests.test_checkout_lowers_the_stock_and_empties_the_cart",
+      "shop.tests.test_stock.StockTests.test_checkout_of_an_empty_cart_is_an_error",
+      "shop.tests.test_stock.StockTests.test_more_than_the_stock_is_rejected_and_the_cart_is_unchanged",
+      "shop.tests.test_stock.StockTests.test_removing_frees_room_to_add_again",
+      "shop.tests.test_stock.StockTests.test_the_stock_counts_what_is_already_in_the_cart",
+      "shop.tests.test_stock.StockTests.test_the_stock_is_never_negative_after_any_sequence",
+      "shop.tests.test_stock.StockTests.test_two_adds_cannot_get_around_the_stock",
+      "shop.tests.test_stock.StockTests.test_you_can_add_up_to_the_stock",
+      "shop.tests.test_totals.TotalsTests.test_a_discount_of_one_and_a_half_cents",
+      "shop.tests.test_totals.TotalsTests.test_igv_and_total_without_coupon",
+      "shop.tests.test_totals.TotalsTests.test_igv_rounds_half_up",
+      "shop.tests.test_totals.TotalsTests.test_money_is_decimal_not_float",
+      "shop.tests.test_totals.TotalsTests.test_subtotal_is_the_sum_of_price_times_quantity",
+      "shop.tests.test_totals.TotalsTests.test_summary_has_the_shape_the_api_sends",
+      "shop.tests.test_totals.TotalsTests.test_summary_of_an_empty_cart",
+      "shop.tests.test_totals.TotalsTests.test_ten_small_items_add_up_exactly",
+      "shop.tests.test_totals.TotalsTests.test_the_discount_rounds_half_up",
+      "shop.tests.test_totals.TotalsTests.test_total_is_the_sum_of_its_rounded_parts"
+    ]
+  },
+  "carts": [
+    {
+      "file": "01-correcto.json",
+      "expected": "totales",
+      "result": "sin_implementar"
+    },
+    {
+      "file": "02-precio-del-cliente.json",
+      "expected": "totales",
+      "result": "sin_implementar"
+    },
+    {
+      "file": "03-stock.json",
+      "expected": "rechazar",
+      "result": "sin_implementar"
+    },
+    {
+      "file": "04-cantidad-negativa.json",
+      "expected": "rechazar",
+      "result": "sin_implementar"
+    },
+    {
+      "file": "05-cupon-doble.json",
+      "expected": "totales",
+      "result": "sin_implementar"
+    },
+    {
+      "file": "06-redondeo.json",
+      "expected": "totales",
+      "result": "sin_implementar"
+    }
+  ],
+  "verdict": "rechazar",
+  "exit_code": 1
+}

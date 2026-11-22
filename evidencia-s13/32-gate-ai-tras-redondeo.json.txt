@@ -1,0 +1,60 @@
+﻿{
+  "mode": "ai",
+  "tests": {
+    "total": 67,
+    "passed": 51,
+    "failed": 16,
+    "failing": [
+      "shop.tests.test_api.ApiTests.test_a_negative_price_from_the_client_changes_nothing_either",
+      "shop.tests.test_api.ApiTests.test_checkout_when_the_stock_changed_is_409_and_keeps_the_cart",
+      "shop.tests.test_api.ApiTests.test_more_than_the_stock_is_409",
+      "shop.tests.test_api.ApiTests.test_remove_more_than_there_is_leaves_no_negative_line",
+      "shop.tests.test_api.ApiTests.test_the_coupon_is_applied_once_even_if_the_client_repeats_it",
+      "shop.tests.test_api.ApiTests.test_the_price_comes_from_the_catalog_not_from_the_client",
+      "shop.tests.test_audit.AuditTests.test_replay_of_the_rounding_cart_matches_your_cart",
+      "shop.tests.test_coupons.CouponTests.test_a_second_coupon_replaces_the_first",
+      "shop.tests.test_coupons.CouponTests.test_applying_the_same_coupon_twice_discounts_once",
+      "shop.tests.test_lines.LinesTests.test_remove_more_than_there_is_never_leaves_a_negative_quantity",
+      "shop.tests.test_stock.StockTests.test_checkout_checks_the_stock_again",
+      "shop.tests.test_stock.StockTests.test_the_stock_counts_what_is_already_in_the_cart",
+      "shop.tests.test_stock.StockTests.test_the_stock_is_never_negative_after_any_sequence",
+      "shop.tests.test_stock.StockTests.test_two_adds_cannot_get_around_the_stock",
+      "shop.tests.test_totals.TotalsTests.test_the_discount_rounds_half_up",
+      "shop.tests.test_totals.TotalsTests.test_total_is_the_sum_of_its_rounded_parts"
+    ]
+  },
+  "carts": [
+    {
+      "file": "01-correcto.json",
+      "expected": "totales",
+      "result": "ok"
+    },
+    {
+      "file": "02-precio-del-cliente.json",
+      "expected": "totales",
+      "result": "ok"
+    },
+    {
+      "file": "03-stock.json",
+      "expected": "rechazar",
+      "result": "ok"
+    },
+    {
+      "file": "04-cantidad-negativa.json",
+      "expected": "rechazar",
+      "result": "ok"
+    },
+    {
+      "file": "05-cupon-doble.json",
+      "expected": "totales",
+      "result": "calcula_distinto"
+    },
+    {
+      "file": "06-redondeo.json",
+      "expected": "totales",
+      "result": "calcula_distinto"
+    }
+  ],
+  "verdict": "rechazar",
+  "exit_code": 1
+}

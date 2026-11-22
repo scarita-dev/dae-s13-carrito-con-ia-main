@@ -1,0 +1,17 @@
+﻿python : Creating test database for alias 'default'...
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_totals shop.tests.test_ ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Creating test d...as 'default'...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+...................
+----------------------------------------------------------------------
+Ran 19 tests in 0.010s
+
+OK
+Destroying test database for alias 'default'...
+
+Found 19 test(s).
+System check identified no issues (0 silenced).

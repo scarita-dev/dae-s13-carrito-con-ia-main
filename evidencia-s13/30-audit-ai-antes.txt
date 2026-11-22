@@ -1,0 +1,24 @@
+﻿
+Auditoría de carritos (implementación activa: ai)
+OK   01-correcto.json
+FALLA 02-precio-del-cliente.json
+      PRICE_MISMATCH   LAP-01: el carrito cobra 0.01 y el catálogo dice 2499.90
+      TOTAL_MISMATCH   subtotal: el carrito declara 39.91 y el cálculo da 2539.80
+      TOTAL_MISMATCH   igv: el carrito declara 7.18 y el cálculo da 457.16
+      TOTAL_MISMATCH   total: el carrito declara 47.09 y el cálculo da 2996.96
+FALLA 03-stock.json
+      OVER_STOCK       PAD-01: 4 unidades y solo hay 2
+FALLA 04-cantidad-negativa.json
+      BAD_QTY          MOU-01: cantidad -3 no válida
+      TOTAL_MISMATCH   subtotal: el carrito declara 69.30 y el cálculo da 189.00
+      TOTAL_MISMATCH   igv: el carrito declara 12.47 y el cálculo da 34.02
+      TOTAL_MISMATCH   total: el carrito declara 81.77 y el cálculo da 223.02
+FALLA 05-cupon-doble.json
+      MULTIPLE_COUPONS Hay 2 cupones y la regla es uno por carrito: ['BIENVENIDA10', 'BIENVENIDA10']
+      TOTAL_MISMATCH   discount: el carrito declara 37.80 y el cálculo da 18.90
+      TOTAL_MISMATCH   igv: el carrito declara 27.22 y el cálculo da 30.62
+      TOTAL_MISMATCH   total: el carrito declara 178.42 y el cálculo da 200.72
+FALLA 06-redondeo.json
+      TOTAL_MISMATCH   discount: el carrito declara 0.84 y el cálculo da 0.85
+
+1 de 6 carritos sin hallazgos.

@@ -1,0 +1,17 @@
+﻿python : Creating test database for alias 'default'...
+En línea: 3 Carácter: 9
++ $out = (python manage.py test 2>&1 | Out-String); $code=$LASTEXITCODE ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Creating test d...as 'default'...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+...................................................................
+----------------------------------------------------------------------
+Ran 67 tests in 0.162s
+
+OK
+Destroying test database for alias 'default'...
+
+Found 67 test(s).
+System check identified no issues (0 silenced).

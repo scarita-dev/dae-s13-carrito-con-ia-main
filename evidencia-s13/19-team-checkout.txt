@@ -1,0 +1,13 @@
+﻿python : ..........
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_stock 2>&1 | Out-String ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (..........:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+----------------------------------------------------------------------
+Ran 10 tests in 0.000s
+
+OK
+Found 10 test(s).
+System check identified no issues (0 silenced).

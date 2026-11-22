@@ -1,0 +1,50 @@
+﻿python : ......E.E....E.
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_lines 2>&1 | Out-String ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (......E.E....E.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_new_cart_is_empty (shop.tests.test_lines.LinesTests.test_new_cart_is_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 16, in 
+test_new_cart_is_empty
+    self.assertEqual(self.cart.total(), Decimal("0.00"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 99, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_remove_more_than_there_is_never_leaves_a_negative_quantity 
+(shop.tests.test_lines.LinesTests.test_remove_more_than_there_is_never_leaves_a_negative_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 72, in 
+test_remove_more_than_there_is_never_leaves_a_negative_quantity
+    self.assertEqual(self.cart.total(), Decimal("0.00"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 99, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_state_survives_between_requests (shop.tests.test_lines.LinesTests.test_state_survives_between_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 93, in 
+test_state_survives_between_requests
+    self.cart.apply_coupon("BIENVENIDA10")
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 82, in apply_coupon
+    raise NotImplementedError("TODO: apply_coupon")
+NotImplementedError: TODO: apply_coupon
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.002s
+
+FAILED (errors=3)
+Found 15 test(s).
+System check identified no issues (0 silenced).

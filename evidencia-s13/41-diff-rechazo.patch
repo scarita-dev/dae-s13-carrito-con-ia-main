@@ -1,0 +1,10 @@
+﻿diff --git a/shop/cart_team.py b/shop/cart_team.py
+index 75aa733..d41c21d 100644
+--- a/shop/cart_team.py
++++ b/shop/cart_team.py
+@@ -144,4 +144,5 @@ def add_from_payload(cart, payload):
+     """Translate an untrusted request body into a cart.add call; the catalog owns the price."""
+     if not isinstance(payload, dict) or not isinstance(payload.get("sku"), str):
+         raise CartError("El cuerpo debe ser un objeto con un «sku» de texto")
++    client_price = payload.get("price")  # PROPUESTA RECHAZADA: se lee para "validar" el cuerpo
+     cart.add(payload["sku"], payload.get("qty", 1))

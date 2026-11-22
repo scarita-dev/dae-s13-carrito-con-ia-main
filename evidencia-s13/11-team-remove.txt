@@ -1,0 +1,126 @@
+﻿python : E.E.EEEEE...EE.
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_lines 2>&1 | Out-String ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (E.E.EEEEE...EE.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_add_creates_a_line_with_the_catalog_price 
+(shop.tests.test_lines.LinesTests.test_add_creates_a_line_with_the_catalog_price)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 20, in 
+test_add_creates_a_line_with_the_catalog_price
+    [line] = self.cart.lines()
+             ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_adding_the_same_product_accumulates 
+(shop.tests.test_lines.LinesTests.test_adding_the_same_product_accumulates)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 33, in 
+test_adding_the_same_product_accumulates
+    self.assertEqual(len(self.cart.lines()), 1)
+                         ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_invalid_quantities_are_rejected (shop.tests.test_lines.LinesTests.test_invalid_quantities_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 45, in 
+test_invalid_quantities_are_rejected
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_lines_keep_insertion_order (shop.tests.test_lines.LinesTests.test_lines_keep_insertion_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 38, in 
+test_lines_keep_insertion_order
+    self.assertEqual([l.sku for l in self.cart.lines()], ["HUB-01", "CAB-01", "MOU-01"])
+                                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_new_cart_is_empty (shop.tests.test_lines.LinesTests.test_new_cart_is_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 15, in 
+test_new_cart_is_empty
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_remove_exactly_what_is_there_drops_the_line 
+(shop.tests.test_lines.LinesTests.test_remove_exactly_what_is_there_drops_the_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 65, in 
+test_remove_exactly_what_is_there_drops_the_line
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_remove_more_than_there_is_never_leaves_a_negative_quantity 
+(shop.tests.test_lines.LinesTests.test_remove_more_than_there_is_never_leaves_a_negative_quantity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 71, in 
+test_remove_more_than_there_is_never_leaves_a_negative_quantity
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_remove_without_quantity_drops_the_line 
+(shop.tests.test_lines.LinesTests.test_remove_without_quantity_drops_the_line)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 55, in 
+test_remove_without_quantity_drops_the_line
+    self.assertEqual(self.cart.lines(), [])
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 73, in lines
+    raise NotImplementedError("TODO: lines")
+NotImplementedError: TODO: lines
+
+======================================================================
+ERROR: test_state_survives_between_requests (shop.tests.test_lines.LinesTests.test_state_survives_between_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_lines.py", line 93, in 
+test_state_survives_between_requests
+    self.cart.apply_coupon("BIENVENIDA10")
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 79, in apply_coupon
+    raise NotImplementedError("TODO: apply_coupon")
+NotImplementedError: TODO: apply_coupon
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.003s
+
+FAILED (errors=9)
+Found 15 test(s).
+System check identified no issues (0 silenced).

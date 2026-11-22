@@ -1,0 +1,38 @@
+﻿python : .....EE...
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_totals 2>&1 | Out-Strin ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.....EE...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_summary_has_the_shape_the_api_sends 
+(shop.tests.test_totals.TotalsTests.test_summary_has_the_shape_the_api_sends)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 61, in 
+test_summary_has_the_shape_the_api_sends
+    self.assertEqual(self.cart.summary(), {
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_summary_of_an_empty_cart (shop.tests.test_totals.TotalsTests.test_summary_of_an_empty_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 72, in 
+test_summary_of_an_empty_cart
+    self.assertEqual(self.cart.summary(), {
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.001s
+
+FAILED (errors=2)
+Found 10 test(s).
+System check identified no issues (0 silenced).

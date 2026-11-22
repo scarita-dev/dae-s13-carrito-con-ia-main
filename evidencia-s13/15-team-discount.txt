@@ -1,0 +1,87 @@
+﻿python : EE.EEEE..
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_coupons 2>&1 | Out-Stri ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (EE.EEEE..:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_a_second_coupon_replaces_the_first 
+(shop.tests.test_coupons.CouponTests.test_a_second_coupon_replaces_the_first)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 52, in 
+test_a_second_coupon_replaces_the_first
+    self.assertEqual(self.cart.summary()["coupon"], "MENOS20")
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_applying_the_same_coupon_twice_discounts_once 
+(shop.tests.test_coupons.CouponTests.test_applying_the_same_coupon_twice_discounts_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 46, in 
+test_applying_the_same_coupon_twice_discounts_once
+    self.assertEqual(self.cart.total(), Decimal("200.72"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_fixed_coupon (shop.tests.test_coupons.CouponTests.test_fixed_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 24, in test_fixed_coupon
+    self.assertEqual(self.cart.total(), Decimal("199.42"))  # 169.00 + 30.42
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_fixed_coupon_never_exceeds_the_subtotal 
+(shop.tests.test_coupons.CouponTests.test_fixed_coupon_never_exceeds_the_subtotal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 31, in 
+test_fixed_coupon_never_exceeds_the_subtotal
+    self.assertEqual(cart.total(), Decimal("0.00"))
+                     ~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_no_coupon_no_discount (shop.tests.test_coupons.CouponTests.test_no_coupon_no_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 63, in 
+test_no_coupon_no_discount
+    self.assertIsNone(self.cart.summary()["coupon"])
+                      ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_percent_coupon (shop.tests.test_coupons.CouponTests.test_percent_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 18, in 
+test_percent_coupon
+    self.assertEqual(self.cart.igv(), Decimal("30.62"))  # 170.10 * 0.18 = 30.618
+                     ~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 101, in igv
+    raise NotImplementedError("TODO: igv")
+NotImplementedError: TODO: igv
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (errors=6)
+Found 9 test(s).
+System check identified no issues (0 silenced).

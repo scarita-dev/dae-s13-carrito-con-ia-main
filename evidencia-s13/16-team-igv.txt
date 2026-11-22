@@ -1,0 +1,111 @@
+﻿python : .EEE.EEEEE
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_totals 2>&1 | Out-Strin ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (.EEE.EEEEE:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_igv_and_total_without_coupon (shop.tests.test_totals.TotalsTests.test_igv_and_total_without_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 23, in 
+test_igv_and_total_without_coupon
+    self.assertEqual(self.cart.total(), Decimal("317.18"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_igv_rounds_half_up (shop.tests.test_totals.TotalsTests.test_igv_rounds_half_up)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 39, in 
+test_igv_rounds_half_up
+    self.assertEqual(self.cart.total(), Decimal("2964.46"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_money_is_decimal_not_float (shop.tests.test_totals.TotalsTests.test_money_is_decimal_not_float)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 27, in 
+test_money_is_decimal_not_float
+    for value in (self.cart.subtotal(), self.cart.discount(), self.cart.igv(), self.cart.total()):
+                                                                               ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_summary_has_the_shape_the_api_sends 
+(shop.tests.test_totals.TotalsTests.test_summary_has_the_shape_the_api_sends)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 61, in 
+test_summary_has_the_shape_the_api_sends
+    self.assertEqual(self.cart.summary(), {
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_summary_of_an_empty_cart (shop.tests.test_totals.TotalsTests.test_summary_of_an_empty_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 72, in 
+test_summary_of_an_empty_cart
+    self.assertEqual(self.cart.summary(), {
+                     ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 110, in summary
+    raise NotImplementedError("TODO: summary")
+NotImplementedError: TODO: summary
+
+======================================================================
+ERROR: test_ten_small_items_add_up_exactly (shop.tests.test_totals.TotalsTests.test_ten_small_items_add_up_exactly)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 33, in 
+test_ten_small_items_add_up_exactly
+    self.assertEqual(self.cart.total(), Decimal("1.24"))  # 1.05 + 0.19 (0.189)
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_the_discount_rounds_half_up (shop.tests.test_totals.TotalsTests.test_the_discount_rounds_half_up)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 45, in 
+test_the_discount_rounds_half_up
+    self.assertEqual(self.cart.total(), Decimal("8.97"))
+                     ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+======================================================================
+ERROR: test_total_is_the_sum_of_its_rounded_parts 
+(shop.tests.test_totals.TotalsTests.test_total_is_the_sum_of_its_rounded_parts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_totals.py", line 55, in 
+test_total_is_the_sum_of_its_rounded_parts
+    self.assertEqual(self.cart.subtotal() - self.cart.discount() + self.cart.igv(), self.cart.total())
+                                                                                    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 105, in total
+    raise NotImplementedError("TODO: total")
+NotImplementedError: TODO: total
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+FAILED (errors=8)
+Found 10 test(s).
+System check identified no issues (0 silenced).

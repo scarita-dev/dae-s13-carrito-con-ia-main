@@ -1,0 +1,125 @@
+﻿python : EEEEEEEEE
+En línea: 2 Carácter: 9
++ $out = (python manage.py test shop.tests.test_coupons 2>&1 | Out-Stri ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (EEEEEEEEE:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+======================================================================
+ERROR: test_a_second_coupon_replaces_the_first 
+(shop.tests.test_coupons.CouponTests.test_a_second_coupon_replaces_the_first)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 51, in 
+test_a_second_coupon_replaces_the_first
+    self.assertEqual(self.cart.discount(), Decimal("20.00"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_applying_the_same_coupon_twice_discounts_once 
+(shop.tests.test_coupons.CouponTests.test_applying_the_same_coupon_twice_discounts_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 45, in 
+test_applying_the_same_coupon_twice_discounts_once
+    self.assertEqual(self.cart.discount(), Decimal("18.90"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_code_is_trimmed_and_case_insensitive 
+(shop.tests.test_coupons.CouponTests.test_code_is_trimmed_and_case_insensitive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 40, in 
+test_code_is_trimmed_and_case_insensitive
+    self.assertEqual(self.cart.discount(), Decimal("18.90"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_fixed_coupon (shop.tests.test_coupons.CouponTests.test_fixed_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 23, in test_fixed_coupon
+    self.assertEqual(self.cart.discount(), Decimal("20.00"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_fixed_coupon_never_exceeds_the_subtotal 
+(shop.tests.test_coupons.CouponTests.test_fixed_coupon_never_exceeds_the_subtotal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 30, in 
+test_fixed_coupon_never_exceeds_the_subtotal
+    self.assertEqual(cart.discount(), Decimal("0.70"))
+                     ~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_no_coupon_no_discount (shop.tests.test_coupons.CouponTests.test_no_coupon_no_discount)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 62, in 
+test_no_coupon_no_discount
+    self.assertEqual(self.cart.discount(), Decimal("0.00"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_percent_coupon (shop.tests.test_coupons.CouponTests.test_percent_coupon)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 17, in 
+test_percent_coupon
+    self.assertEqual(self.cart.discount(), Decimal("18.90"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_the_discount_follows_the_cart (shop.tests.test_coupons.CouponTests.test_the_discount_follows_the_cart)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 57, in 
+test_the_discount_follows_the_cart
+    self.assertEqual(self.cart.discount(), Decimal("22.89"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+======================================================================
+ERROR: test_unknown_coupon_is_rejected_and_changes_nothing 
+(shop.tests.test_coupons.CouponTests.test_unknown_coupon_is_rejected_and_changes_nothing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\tests\test_coupons.py", line 36, in 
+test_unknown_coupon_is_rejected_and_changes_nothing
+    self.assertEqual(self.cart.discount(), Decimal("0.00"))
+                     ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\Downloads\dae-s13-carrito-con-ia-main\shop\cart_team.py", line 93, in discount
+    raise NotImplementedError("TODO: discount")
+NotImplementedError: TODO: discount
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.005s
+
+FAILED (errors=9)
+Found 9 test(s).
+System check identified no issues (0 silenced).
