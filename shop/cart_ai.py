@@ -136,4 +136,4 @@ class Cart:
 def add_from_payload(cart, payload):
     if not isinstance(payload, dict) or not isinstance(payload.get("sku"), str):
         raise CartError("Falta el campo «sku»")
-    cart.add(payload["sku"], payload.get("qty", 1), payload.get("price"))
+    cart.add(payload["sku"], payload.get("qty", 1))
