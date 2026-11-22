@@ -31,8 +31,7 @@ class Cart:
         self._coupons = []
 
     def to_state(self):
-        return {"qty": dict(self._qty), "prices": {k: str(v) for k, v in self._prices.items()},
-                "coupons": list(self._coupons)}
+        return {"qty": dict(self._qty), "coupons": list(self._coupons)}
 
     @classmethod
     def from_state(cls, catalog, state):
