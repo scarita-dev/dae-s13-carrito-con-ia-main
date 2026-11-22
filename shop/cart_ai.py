@@ -85,13 +85,13 @@ class Cart:
 
     def _discount(self):
         subtotal = self._subtotal()
-        total_discount = 0.0
+        total_discount = Decimal("0")
         for code in self._coupons:
             kind, amount = COUPONS[code]
             if kind == "percent":
-                total_discount += subtotal * float(amount) / 100
+                total_discount += subtotal * amount / 100
             else:
-                total_discount += min(float(amount), subtotal)
+                total_discount += min(amount, subtotal)
         return total_discount
 
     def subtotal(self):
