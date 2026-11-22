@@ -105,9 +105,24 @@ class Cart:
         return money(self.subtotal() - self.discount()) + self.igv()
 
     def summary(self):
-        """TODO: the dict the API returns. Keys: lines (list of dicts with sku, name, unit_price,
-        qty, line_total as 2-decimal strings), coupon, subtotal, discount, igv, total (strings via fmt)."""
-        raise NotImplementedError("TODO: summary")
+        """Build the JSON-ready cart summary with two-decimal money strings."""
+        return {
+            "lines": [
+                {
+                    "sku": line.sku,
+                    "name": line.name,
+                    "unit_price": fmt(line.unit_price),
+                    "qty": line.qty,
+                    "line_total": fmt(line.total),
+                }
+                for line in self.lines()
+            ],
+            "coupon": self._coupon,
+            "subtotal": fmt(self.subtotal()),
+            "discount": fmt(self.discount()),
+            "igv": fmt(self.igv()),
+            "total": fmt(self.total()),
+        }
 
     # --- checkout ---
     def checkout(self):
