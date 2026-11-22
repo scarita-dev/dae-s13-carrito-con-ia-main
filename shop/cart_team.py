@@ -88,9 +88,13 @@ class Cart:
         return money(sum((line.total for line in self.lines()), Decimal("0")))
 
     def discount(self):
-        """TODO: percent coupon = subtotal * pct / 100 rounded half up; fixed coupon = the amount, but
-        never more than the subtotal; no coupon = Decimal('0.00')."""
-        raise NotImplementedError("TODO: discount")
+        """Discount of the single coupon, never larger than the subtotal."""
+        if self._coupon is None:
+            return money(Decimal("0"))
+        kind, amount = COUPONS[self._coupon]
+        if kind == "percent":
+            return money(self.subtotal() * amount / 100)
+        return min(money(amount), self.subtotal())
 
     def igv(self):
         """TODO: 18 % of (subtotal - discount), rounded half up."""
