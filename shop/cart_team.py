@@ -101,8 +101,8 @@ class Cart:
         return money((self.subtotal() - self.discount()) * IGV_RATE)
 
     def total(self):
-        """TODO: (subtotal - discount) + igv."""
-        raise NotImplementedError("TODO: total")
+        """Sum of the rounded parts: subtotal minus discount plus igv."""
+        return money(self.subtotal() - self.discount()) + self.igv()
 
     def summary(self):
         """TODO: the dict the API returns. Keys: lines (list of dicts with sku, name, unit_price,
