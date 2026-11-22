@@ -51,9 +51,19 @@ class Cart:
         self._qty[sku] = in_cart + qty
 
     def remove(self, sku, qty=None):
-        """TODO: qty=None removes the whole line; otherwise subtract qty and drop the line when it
-        reaches zero. A sku that is not in the cart is UnknownProduct. Never leave a negative quantity."""
-        raise NotImplementedError("TODO: remove")
+        """Remove a whole line or some units, never leaving a negative quantity."""
+        if sku not in self._qty:
+            raise UnknownProduct(f"{sku!r} is not in the cart")
+        if qty is None:
+            del self._qty[sku]
+            return
+        if isinstance(qty, bool) or not isinstance(qty, int) or qty < 1:
+            raise InvalidQuantity(f"Invalid quantity: {qty!r}")
+        remaining = self._qty[sku] - qty
+        if remaining <= 0:
+            del self._qty[sku]
+        else:
+            self._qty[sku] = remaining
 
     def qty_of(self, sku):
         return self._qty.get(sku, 0)
