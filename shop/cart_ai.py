@@ -102,8 +102,7 @@ class Cart:
         return money((self.subtotal() - self.discount()) * IGV_RATE)
 
     def total(self):
-        base = self._subtotal() - self._discount()
-        return _money(base) + self.igv()
+        return money(self.subtotal() - self.discount()) + self.igv()
 
     def summary(self):
         return {
