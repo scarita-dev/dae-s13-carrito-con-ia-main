@@ -97,8 +97,8 @@ class Cart:
         return min(money(amount), self.subtotal())
 
     def igv(self):
-        """TODO: 18 % of (subtotal - discount), rounded half up."""
-        raise NotImplementedError("TODO: igv")
+        """18 % tax on the discounted subtotal, rounded half up."""
+        return money((self.subtotal() - self.discount()) * IGV_RATE)
 
     def total(self):
         """TODO: (subtotal - discount) + igv."""
