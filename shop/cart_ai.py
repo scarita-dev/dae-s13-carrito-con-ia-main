@@ -70,7 +70,7 @@ class Cart:
 
     def lines(self):
         return [
-            Line(sku, self._catalog[sku].name, self._prices[sku], qty)
+            Line(sku, self._catalog[sku].name, self._catalog[sku].price, qty)
             for sku, qty in self._qty.items()
         ]
 
