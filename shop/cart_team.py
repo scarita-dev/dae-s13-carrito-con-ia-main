@@ -39,9 +39,16 @@ class Cart:
 
     # --- lines ---
     def add(self, sku, qty=1):
-        """TODO: qty is an int >= 1 (InvalidQuantity); the sku exists (UnknownProduct);
-        what is already in the cart plus qty must not exceed the stock (OutOfStock, cart unchanged)."""
-        raise NotImplementedError("TODO: add")
+        """Add qty units of a catalog product to the cart."""
+        if isinstance(qty, bool) or not isinstance(qty, int) or qty < 1:
+            raise InvalidQuantity(f"Invalid quantity: {qty!r}")
+        product = self._catalog.get(sku)
+        if product is None:
+            raise UnknownProduct(f"Unknown product {sku!r}")
+        in_cart = self._qty.get(sku, 0)
+        if in_cart + qty > product.stock:
+            raise OutOfStock(f"{sku}: requested {qty}, already in cart {in_cart}, stock {product.stock}")
+        self._qty[sku] = in_cart + qty
 
     def remove(self, sku, qty=None):
         """TODO: qty=None removes the whole line; otherwise subtract qty and drop the line when it
